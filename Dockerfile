@@ -53,7 +53,7 @@ RUN apt-get update && \
             nginx=$NGINX_VERSION && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pip install --upgrade pip && pip install supervisor-stdout
+RUN pip install supervisor-stdout
 
 # forward request and error logs to docker log collector
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
